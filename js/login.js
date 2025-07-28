@@ -18,7 +18,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
             msg.style.color = 'green';
             msg.textContent = "Login realizado com sucesso!";
             setTimeout(() => {
-                window.location.href = 'dashboard.html'; // próxima tela
+                window.location.href = 'clientes.html'; // próxima tela
             }, 1000);
         } else {
             msg.style.color = 'red';
