@@ -1,5 +1,5 @@
 document.getElementById('login-form').addEventListener('submit', async (e) => {
-    e.preventDefault(); // evita refresh da página
+    e.preventDefault();
 
     const username = document.getElementById('username').value;
     const senha = document.getElementById('senha').value;
@@ -7,18 +7,16 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
 
     try {
         const response = await fetch('http://localhost:8080/api/auth/login', {
-            method: 'POST', // corrigido
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, senha }) // mantém o mesmo padrão do backend
+            body: JSON.stringify({ username, password: senha }) // Corrigido
         });
 
-        const text = await response.text();
-
-        if (response.ok && text.includes('sucesso')) {
+        if (response.ok) {
             msg.style.color = 'green';
             msg.textContent = "Login realizado com sucesso!";
             setTimeout(() => {
-                window.location.href = 'clientes.html'; // próxima tela
+                window.location.href = 'dashboard.html';
             }, 1000);
         } else {
             msg.style.color = 'red';

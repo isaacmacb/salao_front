@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Financeiro - Sala de Sobrancelhas</title>
+    <link rel="stylesheet" href="../css/financeiro.css" />
+</head>
+<body>
+    <h1>Financeiro</h1>
+
+    <form id="form-filtro">
+        <label for="dataInicio">Data Início:</label>
+        <input type="date" id="dataInicio" name="dataInicio" />
+
+        <label for="dataFim" style="margin-left: 20px;">Data Fim:</label>
+        <input type="date" id="dataFim" name="dataFim" />
+
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <table id="tabela-financeiro">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Serviço</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="totais">
+        <p>Total do Dia: <span id="totalDia">R$ 0,00</span></p>
+        <p>Total do Mês: <span id="totalMes">R$ 0,00</span></p>
+    </div>
+
+    <script src="../js/financeiro.js"></script>
+</body>
+</html>

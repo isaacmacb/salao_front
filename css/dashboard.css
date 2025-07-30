@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #6c63ff, #b39ddb);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.menu-item {
+    background: linear-gradient(135deg, #6c63ff, #b39ddb);
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 40px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background: #555;
+}
