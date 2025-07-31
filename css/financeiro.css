@@ -33,7 +33,7 @@ input[type="date"] {
 }
 
 button {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #6c63ff, #b39ddb);
     border: none;
     color: white;
     padding: 8px 15px;
@@ -44,7 +44,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #6c63ff, #b39ddb);
 }
 
 table {
@@ -63,7 +63,7 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #6c63ff, #b39ddb);
     color: white;
 }
 
@@ -87,5 +87,5 @@ tbody tr:hover {
 
 .totais span {
     font-weight: bold;
-    color: #007bff;
+    color: #000000;
 }

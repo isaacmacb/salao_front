@@ -2,24 +2,40 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
-    <title>Serviços - Sala de Sobrancelhas</title>
+    <title>Serviços - Salão de Sobrancelhas</title>
     <link rel="stylesheet" href="../css/servicos.css" />
 </head>
 <body>
-    <h1>Serviços</h1>
+    <h1>Gerenciar Serviços</h1>
 
-    <table id="tabela-servicos">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Valor</th>
-                <th>Duração (min)</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <section>
+        <h2>Cadastrar / Editar Serviço</h2>
+        <form id="form-servico">
+            <input type="hidden" id="id" />
+            <input type="text" id="nome" placeholder="Nome do serviço" required />
+            <input type="number" id="valor" placeholder="Valor (R$)" step="0.01" required />
+            <input type="number" id="duracao" placeholder="Duração (min)" required />
+            <button type="submit">Salvar</button>
+            <button type="button" id="cancelar-edicao" style="display:none;">Cancelar</button>
+        </form>
+    </section>
 
-    <script src="servicos.js"></script>
+    <section>
+        <h2>Lista de Serviços</h2>
+        <table id="tabela-servicos" border="1" style="width:100%; text-align:left;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Duração (min)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="../js/servicos.js"></script>
 </body>
 </html>

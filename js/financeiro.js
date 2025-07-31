@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/financeiro';
+const apiUrl = 'http://localhost:8080/api/financeiro';
 
 async function carregarFinanceiro(dataInicio = '', dataFim = '') {
     let url = apiUrl;
