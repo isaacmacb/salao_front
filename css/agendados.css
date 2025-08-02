@@ -1,0 +1,153 @@
+/* agendados.css */
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+body {
+  background-color: #f9fafb;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+form {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="time"] {
+  width: calc(50% - 1rem);
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0.5rem 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form input[type="time"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+form button {
+  background: linear-gradient(135deg, #6c63ff, #b39ddb);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+form button:hover {
+  background-color: #2980b9;
+}
+
+/* Filtro e botões */
+div > label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+#filtroData {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+#btnFiltrar, #btnLimpar {
+  background: linear-gradient(135deg, #6c63ff, #b39ddb);
+  border: none;
+  padding: 0.45rem 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#btnFiltrar:hover, #btnLimpar:hover {
+  background: linear-gradient(135deg, #6c63ff, #b39ddb);
+}
+
+#mensagem {
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #e74c3c; /* vermelho para erros */
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: linear-gradient(135deg, #6c63ff, #b39ddb);
+  color: #fff;
+}
+
+thead th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  user-select: none;
+}
+
+tbody tr:hover {
+  background-color: #ecf6fc;
+}
+
+tbody td {
+  padding: 0.75rem 0.75rem;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="time"] {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  thead th, tbody td {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.9rem;
+  }
+}
