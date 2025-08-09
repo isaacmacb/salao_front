@@ -10,17 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
   async function carregarAgendamentos(dataFiltro = null) {
     try {
       let url = 'http://localhost:8080/agenda';
-      // Se quiser implementar filtro no backend, pode passar via query param
-      if (dataFiltro) {
-        url += '?data=' + dataFiltro;
+
+      if (dataFiltro && dataFiltro.trim() !== '') {
+        url += '?data=' + encodeURIComponent(dataFiltro);
       }
 
       const response = await fetch(url);
       if (!response.ok) throw new Error('Erro ao carregar agendamentos');
 
       const agendamentos = await response.json();
-
       tabela.innerHTML = '';
+
+      if (agendamentos.length === 0) {
+        tabela.innerHTML = `<tr><td colspan="4" style="text-align:center;">Nenhum agendamento encontrado</td></tr>`;
+        return;
+      }
 
       agendamentos.forEach(a => {
         const dataFormatada = new Date(a.data).toLocaleDateString('pt-BR');
@@ -28,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${a.cliente.nome}</td>
-          <td>${a.servico.nome}</td>
+          <td>${a.cliente?.nome || ''}</td>
+          <td>${a.servico?.nome || ''}</td>
           <td>${dataFormatada}</td>
           <td>${horaFormatada}</td>
         `;
@@ -43,12 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  btnFiltrar.addEventListener('click', () => {
+  btnFiltrar.addEventListener('click', (e) => {
+    e.preventDefault();
     const dataFiltro = filtroData.value;
     carregarAgendamentos(dataFiltro);
   });
 
-  btnLimpar.addEventListener('click', () => {
+  btnLimpar.addEventListener('click', (e) => {
+    e.preventDefault();
     filtroData.value = '';
     carregarAgendamentos();
   });

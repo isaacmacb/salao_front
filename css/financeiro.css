@@ -1,91 +1,197 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: #f9f9f9;
-    color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px auto;
+  max-width: 900px;
+  background: #f5f7fa;
+  color: #2e2e2e;
+  line-height: 1.6;
 }
 
 h1 {
-    color: #444;
-    margin-bottom: 20px;
+  color: #3b3b3b;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 
+/* Forms */
 form {
-    margin-bottom: 20px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    max-width: 600px;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(101, 101, 101, 0.1);
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
 }
 
 label {
-    display: inline-block;
-    width: 120px;
-    font-weight: bold;
+  flex: 0 0 130px;
+  font-weight: 600;
+  color: #555555;
+  font-size: 1rem;
 }
 
-input[type="date"] {
-    padding: 6px;
-    width: 180px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+  flex: 1 1 180px;
+  padding: 8px 12px;
+  border: 1.8px solid #cfd8dc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #6c63ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
 }
 
 button {
-    background: linear-gradient(135deg, #6c63ff, #b39ddb);
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 10px;
+  background: linear-gradient(135deg, #6c63ff, #b39ddb);
+  border: none;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
 }
 
-button:hover {
-    background: linear-gradient(135deg, #6c63ff, #b39ddb);
+button:hover,
+button:focus {
+  background: linear-gradient(135deg, #574dcf, #8e7cc3);
+  box-shadow: 0 6px 20px rgba(87, 77, 207, 0.6);
+  outline: none;
 }
 
+/* Table */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  min-width: 600px;
 }
 
 th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
+  padding: 16px 20px;
+  text-align: left;
+  color: #444444;
 }
 
 th {
-    background: linear-gradient(135deg, #6c63ff, #b39ddb);
-    color: white;
+  background: linear-gradient(135deg, #6c63ff, #b39ddb);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+tbody tr {
+  transition: background-color 0.3s ease;
+  cursor: default;
 }
 
 tbody tr:hover {
-    background-color: #f1f7ff;
+  background-color: #f0f4ff;
 }
 
+tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+/* Botão na tabela */
+tbody tr button {
+  background: #ff6b6b;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+tbody tr button:hover {
+  background: #e63946;
+}
+
+/* Totais */
 .totais {
-    margin-top: 20px;
-    max-width: 600px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(101, 101, 101, 0.1);
+  margin: 30px auto 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
 }
 
 .totais p {
-    font-size: 1.1em;
-    margin: 8px 0;
+  margin: 0;
 }
 
 .totais span {
-    font-weight: bold;
-    color: #000000;
+  color: #6c63ff;
+  font-weight: 700;
+}
+
+/* Responsivo básico */
+@media (max-width: 720px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  label {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  input[type="date"],
+  input[type="text"],
+  input[type="number"],
+  select,
+  button {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .totais {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  table {
+    min-width: 100%;
+    font-size: 0.9rem;
+  }
 }
